@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="80dp">
+
+
+
+        <EditText
+            android:id="@+id/editTextEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:layout_marginBottom="20dp"/>
+
+        <EditText
+            android:id="@+id/editTextName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editTextEmail"
+            android:hint="Name"
+            android:inputType="text"
+            android:layout_marginBottom="20dp"/>
+
+        <EditText
+            android:id="@+id/editTextLocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editTextName"
+            android:hint="Location"
+            android:inputType="text"
+            android:layout_marginBottom="20dp"/>
+
+        <EditText
+            android:id="@+id/editTextFarmSize"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editTextLocation"
+            android:hint="Farm Size(Acres)"
+            android:inputType="number"
+            android:layout_marginBottom="20dp"/>
+
+        <EditText
+            android:id="@+id/editTextPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editTextFarmSize"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:layout_marginBottom="20dp"/>
+
+        <EditText
+            android:id="@+id/editTextConfirmPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editTextPassword"
+            android:hint="Confirm Password"
+            android:inputType="textPassword"
+            android:layout_marginBottom="20dp"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editTextConfirmPassword"
+            android:layout_centerHorizontal="true"
+            android:backgroundTint="@color/purple_200"
+            android:text="Sign Up"
+            android:id="@+id/buttonSignUp"
+            android:layout_marginBottom="15dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Already have an account,Login"
+            android:gravity="center"
+            android:textColor="@color/purple_700"
+            android:layout_below="@+id/buttonSignUp"
+            android:id="@+id/textViewLogin"/>
+
+    </RelativeLayout>
+
