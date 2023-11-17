@@ -8,6 +8,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     tools:openDrawer="start"
+    android:background="@drawable/background_gradient"
     tools:context = ".Announcements.ClerkAnnouncementsActivity">
 
 

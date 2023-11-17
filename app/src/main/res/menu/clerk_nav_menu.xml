@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:showIn="navigation_view">
+    tools:showIn="navigation_view"
+    android:background="@drawable/background_gradient">
 
     <group android:checkableBehavior="single">
         <item
@@ -23,10 +24,22 @@
             android:icon="@drawable/baseline_question_answer_24"/>
 
         <item
+            android:id="@+id/nav_new_produce"
+            android:title="New Produce"
+            android:textColor="@color/green"
+            android:icon="@drawable/baseline_agriculture_24"/>
+
+        <item
             android:id="@+id/nav_orders"
-            android:title="Orders"
+            android:title="Fertiliser Orders"
             android:textColor="@color/green"
             android:icon="@drawable/baseline_shopping_cart_24"/>
+
+        <item
+            android:id="@+id/nav_new_farmers"
+            android:title="Sign Farmer"
+            android:textColor="@color/green"
+            android:icon="@drawable/baseline_person_add_24"/>
 
         <item
             android:id="@+id/nav_history"

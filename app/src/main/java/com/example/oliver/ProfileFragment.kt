@@ -35,10 +35,10 @@ class ProfileFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_profile, container, false)
         nameTextView = view.findViewById(R.id.edt_Name)
         emailTextView = view.findViewById(R.id.edt_Email)
-        updateButton = view.findViewById(R.id.btn_update)
-        updateButton.setOnClickListener(){
-
-        }
+//        updateButton = view.findViewById(R.id.btn_update)
+//        updateButton.setOnClickListener(){
+//
+//        }
         return view
     }
 

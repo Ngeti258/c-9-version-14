@@ -23,7 +23,7 @@ class AnnouncementsAdapter(private val announcements: List<Announcement>) :
 
     override fun onBindViewHolder(holder: AnnouncementViewHolder, position: Int) {
         val announcement = announcements[position]
-        holder.titleTextView.text = announcement.title
+        holder.titleTextView.text = announcement.title.uppercase()
         holder.paragraphTextView.text = announcement.paragraph
     }
 

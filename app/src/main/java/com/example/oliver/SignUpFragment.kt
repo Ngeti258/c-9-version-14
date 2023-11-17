@@ -2,57 +2,50 @@ package com.example.oliver
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import com.example.oliver.Announcements.ClerkAnnouncementsActivity
-import com.example.oliver.databinding.ActivitySignupBinding
-import com.google.firebase.Firebase
-
 import com.google.firebase.auth.FirebaseAuth
-
 import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ktx.database
 
-import com.google.firebase.database.database
-
-class SignUpActivity : AppCompatActivity() {
+class SignUpFragment : Fragment() {
     private lateinit var auth: FirebaseAuth
-    private lateinit var database: FirebaseDatabase
-    private lateinit var binding: ActivitySignupBinding
     private lateinit var emailEditText: EditText
     private lateinit var nameEditText: EditText
     private lateinit var locationEditText: EditText
     private lateinit var farmSizeEditText: EditText
     private lateinit var passwordEditText: EditText
-    private lateinit var textViewLogin : TextView
+    private lateinit var textViewLogin: TextView
     private lateinit var confirmPasswordEditText: EditText
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_signup)
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        return inflater.inflate(R.layout.fragment_sign_up, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
         auth = FirebaseAuth.getInstance()
 
-        binding = ActivitySignupBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-        emailEditText = findViewById(R.id.editTextEmail)
-        nameEditText = findViewById(R.id.editTextName)
-        locationEditText = findViewById(R.id.editTextLocation)
-        farmSizeEditText = findViewById(R.id.editTextFarmSize)
-        passwordEditText = findViewById(R.id.editTextPassword)
-        confirmPasswordEditText = findViewById(R.id.editTextConfirmPassword)
-        textViewLogin = findViewById(R.id.textViewLogin)
+        emailEditText = view.findViewById(R.id.editTextEmail)
+        nameEditText = view.findViewById(R.id.editTextName)
+        locationEditText = view.findViewById(R.id.editTextLocation)
+        farmSizeEditText = view.findViewById(R.id.editTextFarmSize)
+        passwordEditText = view.findViewById(R.id.editTextPassword)
+        confirmPasswordEditText = view.findViewById(R.id.editTextConfirmPassword)
+//        textViewLogin = view.findViewById(R.id.textViewLogin)
 
+        val signUpButton: Button = view.findViewById(R.id.buttonSignUp)
 
-        val signUpButton: Button = findViewById(R.id.buttonSignUp)
-
-        textViewLogin.setOnClickListener {
-            val intent = Intent(this, LoginActivity::class.java)
-            startActivity(intent)
-        }
         signUpButton.setOnClickListener {
             val email = emailEditText.text.toString().trim()
             val password = passwordEditText.text.toString()
@@ -73,24 +66,25 @@ class SignUpActivity : AppCompatActivity() {
 
             // Create a user with email and password
             auth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this) { task ->
+                .addOnCompleteListener(requireActivity()) { task ->
                     if (task.isSuccessful) {
                         // Registration successful, save user details to Firebase Database
                         saveUserDetailsToDatabase()
 
-                        Toast.makeText(this, "Registration successful", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(requireContext(), "Registration successful", Toast.LENGTH_SHORT).show()
 
                         if (email == "clerk@gmail.com") {
-                            val intent = Intent(this, ClerkAnnouncementsActivity::class.java)
+                            val intent = Intent(requireContext(), ClerkAnnouncementsActivity::class.java)
                             startActivity(intent)
-                        }else {
-                            val intent = Intent(this, FarmerActivity::class.java)
+                            requireActivity().finish()
+                        } else {
+                            val intent = Intent(requireContext(), FarmerActivity::class.java)
                             startActivity(intent)
-                            finish()
+                            requireActivity().finish()
                         }
                     } else {
                         Toast.makeText(
-                            this,
+                            requireContext(),
                             "Registration failed. Please try again.",
                             Toast.LENGTH_SHORT
                         ).show()
@@ -114,14 +108,12 @@ class SignUpActivity : AppCompatActivity() {
 
             val usersDatabaseReference = FirebaseDatabase.getInstance().reference.child("users")
             usersDatabaseReference.child(uid).setValue(user).addOnSuccessListener {
-                binding.editTextName.text.clear()
-                binding.editTextEmail.text.clear()
-                binding.editTextLocation.text.clear()
+                nameEditText.text.clear()
+                emailEditText.text.clear()
+                locationEditText.text.clear()
             }
         }
     }
-
-
 
     private fun isValidEmail(email: String): Boolean {
         val emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"

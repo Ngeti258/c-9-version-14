@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
     android:layout_marginTop="95dp"
     android:layout_marginStart="10dp"
-    android:background="#83A183"
+    android:background="@drawable/background_gradient"
     android:orientation="vertical">
 
 <!--    <de.hdodenhof.circleimageview.CircleImageView-->

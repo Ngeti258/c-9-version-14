@@ -56,10 +56,9 @@ class LoginActivity : AppCompatActivity() {
                 }
         }
 
-        // Handle the "Don't have an account? Sign Up" text view to navigate to the sign-up screen
-        signUpTextView.setOnClickListener {
-            val intent = Intent(this, SignUpActivity::class.java)
-            startActivity(intent)
-        }
+//        signUpTextView.setOnClickListener {
+//            val intent = Intent(this, SignUpActivity::class.java)
+//            startActivity(intent)
+
     }
 }
