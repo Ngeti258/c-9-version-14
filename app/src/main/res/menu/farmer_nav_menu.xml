@@ -14,7 +14,11 @@
             android:title="Enquiries"
             android:textColor="@color/green"
             android:icon="@drawable/baseline_question_answer_24"/>
-
+        <item
+            android:id="@+id/nav_products"
+            android:title="My Produce"
+            android:textColor="@color/green"
+            android:icon="@drawable/baseline_emoji_food_beverage_24"/>
 
         <item
             android:id="@+id/nav_make_orders"

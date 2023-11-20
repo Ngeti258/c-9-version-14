@@ -15,13 +15,18 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 
 data class Product(
-    var productId: String?,  // Include productId as part of the attributes
+    var productId: String?,
     val userId: String,
     val name: String,
     val quantity: Double,
     val amount: Double,
     val timestamp: Long
-)
+) {
+
+    constructor() : this(null, "", "", 0.0, 0.0, 0L)
+}
+
+
 
 
 class NewProduceFragment : Fragment() {

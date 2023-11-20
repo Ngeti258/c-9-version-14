@@ -1,6 +1,7 @@
 package com.example.oliver.Announcements
 
 
+
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
@@ -14,6 +15,8 @@ import com.example.oliver.LoginActivity
 import com.example.oliver.MainActivityFragment
 import com.example.oliver.OrdersFragment
 import com.example.oliver.Produce.NewProduceFragment
+import com.example.oliver.Produce.ProductsFragment
+
 import com.example.oliver.ProfileFragment
 import com.example.oliver.R
 import com.example.oliver.SignUpFragment
@@ -58,6 +61,7 @@ class ClerkAnnouncementsActivity : AppCompatActivity() {
                 R.id.nav_orders -> replaceFragment(OrdersFragment(),it.title.toString())
                 R.id.nav_history -> replaceFragment(HistoryFragment(),it.title.toString())
                 R.id.nav_new_farmers -> replaceFragment(SignUpFragment(),it.title.toString())
+                R.id.nav_products -> replaceFragment(ProductsFragment(),it.title.toString())
                 R.id.nav_new_produce -> replaceFragment(NewProduceFragment(),it.title.toString())
                 R.id.nav_profile -> replaceFragment(ProfileFragment(),it.title.toString())
             }

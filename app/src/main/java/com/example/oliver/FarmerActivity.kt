@@ -10,6 +10,8 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import com.example.oliver.Announcements.AnnouncementCreationFragment
 import com.example.oliver.Announcements.AnnouncementsFragment
+import com.example.oliver.Produce.ProductsFragment
+
 
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
@@ -49,6 +51,7 @@ class FarmerActivity : AppCompatActivity() {
                 R.id.nav_enquiries -> replaceFragment(MainActivityFragment(),it.title.toString())
                 R.id.nav_make_orders-> replaceFragment(MakeOrdersFragment(),it.title.toString())
                 R.id.nav_history-> replaceFragment(HistoryFragment(),it.title.toString())
+                R.id.nav_products-> replaceFragment(ProductsFragment(),it.title.toString())
                 R.id.nav_profile -> replaceFragment(ProfileFragment(),it.title.toString())
             }
             true

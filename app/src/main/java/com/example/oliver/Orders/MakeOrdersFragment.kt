@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.fragment.app.Fragment
+import com.example.oliver.Produce.Product
 import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
@@ -67,7 +68,7 @@ class MakeOrdersFragment : Fragment() {
             val productsRef = database.getReference("orders")
             val productId = productsRef.push().key
 
-            val product = Product(coffeeType, quantity, userId, productId)
+            val product = com.example.oliver.Orders.Product (coffeeType, quantity, userId, productId)
 
             productId?.let {
                 productsRef.child(it).setValue(product)
@@ -97,8 +98,13 @@ class MakeOrdersFragment : Fragment() {
 }
 
 data class Product(
-    val coffeeType: String? = null,
-    val quantity: Double? = 0.0,
-    val userId: String? = null,
-    var productId: String? = null,
-)
+    var productId: String?,
+    val userId: String,
+    val name: String,
+    val quantity: Double,
+    val amount: Double,
+    val timestamp: Long
+) {
+
+    constructor() : this(null, "", "", 0.0, 0.0, 0L)
+}

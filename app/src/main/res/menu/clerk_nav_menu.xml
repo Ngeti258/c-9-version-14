@@ -30,6 +30,13 @@
             android:icon="@drawable/baseline_agriculture_24"/>
 
         <item
+            android:id="@+id/nav_products"
+            android:title="Listed Produce"
+            android:textColor="@color/green"
+            android:icon="@drawable/baseline_emoji_food_beverage_24"/>
+
+
+        <item
             android:id="@+id/nav_orders"
             android:title="Fertiliser Orders"
             android:textColor="@color/green"
