@@ -18,7 +18,7 @@ class ProductsAdapter(private val productList: List<Product>) : RecyclerView.Ada
         val customerNameTV: TextView = itemView.findViewById(R.id.customerNameTV)
         val coffeePriceTV: TextView = itemView.findViewById(R.id.coffeePriceTV)
         val orderTime: TextView = itemView.findViewById(R.id.orderTime)
-        val processOrderButton: Button = itemView.findViewById(R.id.process_order)
+
     }
 
     // Create new ViewHolders (invoked by the layout manager)
@@ -33,14 +33,10 @@ class ProductsAdapter(private val productList: List<Product>) : RecyclerView.Ada
 
         // Set the data to the views
         holder.customerNameTV.text = currentItem.name
-        holder.coffeePriceTV.text = "ksh ${currentItem.amount} per kilogram"
-        holder.orderTime.text = "Order Time: ${formatTimestamp(currentItem.timestamp)}"
+        holder.coffeePriceTV.text = " ksh ${currentItem.amount} for all the produce"
+        holder.orderTime.text = " Produce Received at: ${formatTimestamp(currentItem.timestamp)}"
 
-        // Set a click listener for the process order button if needed
-        holder.processOrderButton.setOnClickListener {
-            // Handle button click
-            // You can use position to get the clicked item
-        }
+
     }
 
     // Return the size of your dataset (invoked by the layout manager)
