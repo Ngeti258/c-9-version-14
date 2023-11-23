@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="46dp"
+    tools:context=".BalanceFragment">
+
+    <!-- Box 1 -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/darker_gray"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="28dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:id="@+id/produceReturns"
+            android:layout_height="wrap_content"
+            android:text="Produce Return"
+            android:gravity="center"
+            android:textSize="18sp" />
+
+    </FrameLayout>
+
+    <!-- Box 2 -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_blue_light"
+        android:layout_marginBottom="28dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:id="@+id/fertilizerPrice"
+            android:layout_height="wrap_content"
+            android:text="Fertilizer price"
+            android:gravity="center"
+            android:textSize="18sp" />
+
+    </FrameLayout>
+
+    <!-- Box 3 -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_green_light"
+        android:layout_marginBottom="28dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:id="@+id/systemMaintanance"
+            android:layout_height="wrap_content"
+            android:text="System Maintanance"
+            android:gravity="center"
+            android:textSize="18sp" />
+
+    </FrameLayout>
+
+    <!-- Box 4 -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_orange_light">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/annualFee"
+            android:text="Annual Fee"
+            android:gravity="center"
+            android:textSize="18sp" />
+
+    </FrameLayout>
+
+</LinearLayout>
