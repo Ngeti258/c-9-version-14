@@ -17,7 +17,6 @@ class ProfileFragment : Fragment() {
     private lateinit var userId: String
     private lateinit var nameTextView: TextView
     private lateinit var emailTextView: TextView
-    private lateinit var roleTextView: TextView
     private lateinit var updateButton: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,13 +34,9 @@ class ProfileFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_profile, container, false)
         nameTextView = view.findViewById(R.id.edt_Name)
         emailTextView = view.findViewById(R.id.edt_Email)
-//        updateButton = view.findViewById(R.id.btn_update)
-//        updateButton.setOnClickListener(){
-//
-//        }
+
         return view
     }
-
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -52,10 +47,11 @@ class ProfileFragment : Fragment() {
                     val email = snapshot.child("email").getValue(String::class.java)
                     nameTextView.text = name
                     emailTextView.text = email
-                    }
+                }
             }
 
             override fun onCancelled(error: DatabaseError) {
+                // Handle error
             }
         })
     }
