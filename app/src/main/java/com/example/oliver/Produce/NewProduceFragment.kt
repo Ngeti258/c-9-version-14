@@ -9,6 +9,7 @@ import android.widget.AutoCompleteTextView
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.oliver.R
 import com.google.firebase.auth.FirebaseAuth
@@ -132,7 +133,8 @@ class NewProduceFragment : Fragment() {
                             if (task.isSuccessful) {
                                 // Product saved successfully
                                 clearInputFields()
-                                // You can show a success message or navigate to another screen
+                                Toast.makeText(context, "Product successfully saved.", Toast.LENGTH_SHORT)
+                                    .show()
                             } else {
                                 // Handle the error
                             }
