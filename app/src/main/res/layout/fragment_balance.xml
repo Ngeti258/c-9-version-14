@@ -63,13 +63,29 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="358dp"
         android:background="@android:color/holo_orange_light">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/annualFee"
-            android:text="Annual Fee"
+            android:text="Annual Fees"
+            android:gravity="center"
+            android:textSize="18sp" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_orange_light">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/totalBalance"
+            android:text="Balance :"
             android:gravity="center"
             android:textSize="18sp" />
 
