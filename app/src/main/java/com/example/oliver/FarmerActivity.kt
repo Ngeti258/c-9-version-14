@@ -51,7 +51,7 @@ class FarmerActivity : AppCompatActivity() {
                 R.id.nav_enquiries -> replaceFragment(MainActivityFragment(),it.title.toString())
                 R.id.nav_make_orders-> replaceFragment(MakeOrdersFragment(),it.title.toString())
                 R.id.nav_history-> replaceFragment(HistoryFragment(),it.title.toString())
-                R.id.nav_products-> replaceFragment(ProductsFragment(),it.title.toString())
+                R.id.nav_balance-> replaceFragment(BalanceFragment(),it.title.toString())
                 R.id.nav_profile -> replaceFragment(ProfileFragment(),it.title.toString())
             }
             true
