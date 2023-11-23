@@ -60,7 +60,6 @@ class ClerkAnnouncementsActivity : AppCompatActivity() {
                 R.id.nav_new_announcement -> replaceFragment(AnnouncementCreationFragment(),it.title.toString())
                 R.id.nav_enquiries -> replaceFragment(MainActivityFragment(),it.title.toString())
                 R.id.nav_orders -> replaceFragment(OrdersFragment(),it.title.toString())
-                R.id.nav_history -> replaceFragment(HistoryFragment(),it.title.toString())
                 R.id.nav_new_farmers -> replaceFragment(SignUpFragment(),it.title.toString())
                 R.id.nav_products -> replaceFragment(ProductsFragment(),it.title.toString())
                 R.id.nav_new_produce -> replaceFragment(NewProduceFragment(),it.title.toString())
