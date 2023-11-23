@@ -131,10 +131,10 @@ class NewProduceFragment : Fragment() {
                     productsRef.child(productKey).setValue(product)
                         .addOnCompleteListener { task ->
                             if (task.isSuccessful) {
-                                // Product saved successfully
-                                clearInputFields()
                                 Toast.makeText(context, "Product successfully saved.", Toast.LENGTH_SHORT)
                                     .show()
+                                clearInputFields()
+
                             } else {
                                 // Handle the error
                             }
